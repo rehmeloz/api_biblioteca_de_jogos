@@ -6,8 +6,8 @@ Uma API simples para cadastro e manipulação de uma Biblioteca de Jogos
 
 ### Backend
 - **C#** — Linguagem principal da API
-- **.NET** — ecossistema utilizado na API
-- **ASP.NET Core** — framework utilizado na API
+- **.NET** — Ecossistema utilizado na API
+- **ASP.NET Core** — Framework utilizado na API
 - **EF Core** - ORM utilizado na API
 
 ## ✨ Funcionalidades
