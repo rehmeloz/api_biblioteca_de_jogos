@@ -1,6 +1,6 @@
 # 📋 API de Biblioteca de Jogos
 
-Uma API simples para cadastro e manipulação de uma Biblioteca de Jogos
+Uma API Rest para cadastro e manipulação de uma Biblioteca de Jogos
 
 ## 🚀 Tecnologias Utilizadas
 
