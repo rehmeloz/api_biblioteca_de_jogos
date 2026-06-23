@@ -15,25 +15,25 @@ public class JogoRepository : IJogoRepository
         _context = context;
     }
 
-    public async Task CadastrarJogo(JogoDTO jogoDto)
+    public async Task CadastrarJogo(Jogo jogo)
     {
-        _context.AddAsync(jogoDto);
+        _context.AddAsync(jogo);
         await _context.SaveChangesAsync();
     }
 
-    public async Task EditarJogo(int id, JogoDTO jogoDto)
+    public async Task EditarJogo(int id, Jogo jogoEditado)
     {
         var jogo = await _context.Jogos.FindAsync(id);
 
         if (jogo == null) return;
 
-        jogo.Nome = jogoDto.Nome;
-        jogo.Genero = jogoDto.Genero;
-        jogo.Modo = jogoDto.Modo;
-        jogo.Categoria = jogoDto.Categoria;
-        jogo.Possui = jogoDto.Possui;
-        jogo.Nota = jogoDto.Nota;
-        jogo.Comentario = jogoDto.Comentario;
+        jogo.Nome = jogoEditado.Nome;
+        jogo.Genero = jogoEditado.Genero;
+        jogo.Modo = jogoEditado.Modo;
+        jogo.Categoria = jogoEditado.Categoria;
+        jogo.Possui = jogoEditado.Possui;
+        jogo.Nota = jogoEditado.Nota;
+        jogo.Comentario = jogoEditado.Comentario;
 
         await _context.SaveChangesAsync();
     }
