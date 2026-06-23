@@ -1,5 +1,6 @@
 ﻿using api_biblioteca_de_jogos.DTOs;
 using api_biblioteca_de_jogos.Entities;
+using api_biblioteca_de_jogos.Enums;
 using api_biblioteca_de_jogos.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -38,7 +39,58 @@ namespace api_biblioteca_de_jogos.Controllers
         [HttpPatch("editar")]
         public async Task<IActionResult> EditarJogo(int id, JogoDTO jogoDto)
         {
-            await _service.EditarJogo(id, jogoDto);
+            var jogo = new Jogo
+            {
+                Nome = jogoDto.Nome,
+                Genero = jogoDto.Genero,
+                Modo = jogoDto.Modo,
+                Categoria = jogoDto.Categoria,
+                Possui = jogoDto.Possui,
+                Nota = jogoDto.Nota,
+                Comentario = jogoDto.Comentario
+            };
+
+            await _service.EditarJogo(id, jogo);
+
+            return Ok();
+        }
+
+        [HttpDelete("excluir")]
+        public async Task<IActionResult> ExcluirJogo(int id)
+        {
+            await _service.ExcluirJogo(id);
+
+            return Ok();
+        }
+
+        [HttpGet("id")]
+        public async Task<IActionResult> BuscarPorId(int id)
+        {
+            await _service.BuscarPorId(id);
+
+            return Ok();
+        }
+
+        [HttpGet("listar")]
+        public async Task<IActionResult> ListarJogos(int pagina = 1, int quantidade = 5)
+        {
+            await _service.ListarJogos(pagina, quantidade);
+
+            return Ok();
+        }
+
+        [HttpGet("listar/categoria")]
+        public async Task<IActionResult> ListarPorCategoria(ECategoria categoria, int pagina = 1, int quantidade = 5)
+        {
+            await _service.ListarPorCategoria(categoria, pagina, quantidade);
+
+            return Ok();
+        }
+
+        [HttpGet("listar/nota")]
+        public async Task<IActionResult> ListaPorNota(int nota, int pagina = 1, int quantidade = 5)
+        {
+            await _service.ListaPorNota(nota, pagina, quantidade);
 
             return Ok();
         }
