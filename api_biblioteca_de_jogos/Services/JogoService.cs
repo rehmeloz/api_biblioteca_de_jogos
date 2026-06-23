@@ -17,6 +17,9 @@ public class JogoService : IJogoService
 
     public async Task CadastrarJogo(Jogo jogo)
     {
+        if (jogo.Nota > 5)
+            throw new Exception("A nota não pode ser maior que 5!");
+
         await _repository.CadastrarJogo(jogo);
     }
 
