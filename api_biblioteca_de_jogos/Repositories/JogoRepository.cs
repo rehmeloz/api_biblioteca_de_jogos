@@ -48,6 +48,13 @@ public class JogoRepository : IJogoRepository
         await _context.SaveChangesAsync();
     }
 
+    public async Task BuscarPorId(int id)
+    {
+        var jogo = await _context.Jogos.FindAsync(id);
+
+        if (jogo == null) return;
+    }
+
     public async Task<List<Jogo>> ListarJogos(int pagina, int quantidade)
     {
         return await _context.Jogos
