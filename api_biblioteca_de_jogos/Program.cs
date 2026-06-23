@@ -1,4 +1,6 @@
 using api_biblioteca_de_jogos.Data;
+using api_biblioteca_de_jogos.Repositories;
+using api_biblioteca_de_jogos.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +13,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IJogoRepository, JogoRepository>();
+
+builder.Services.AddScoped<IJogoService, JogoService>();
 
 var app = builder.Build();
 
