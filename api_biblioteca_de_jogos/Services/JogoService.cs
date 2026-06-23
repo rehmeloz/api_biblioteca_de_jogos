@@ -23,14 +23,14 @@ public class JogoService : IJogoService
         await _repository.CadastrarJogo(jogo);
     }
 
-    public async Task EditarJogo(int id, EditarJogoDTO jogoEditado)
+    public async Task EditarJogo(int id, JogoDTO jogoDto)
     {
         var jogo = _repository.BuscarPorId(id);
 
         if (jogo == null)
             throw new Exception("O jogo não foi encontrado!");
 
-        await _repository.EditarJogo(id, jogoEditado);
+        await _repository.EditarJogo(id, jogoDto);
     }
 
     public async Task ExcluirJogo(int id)
