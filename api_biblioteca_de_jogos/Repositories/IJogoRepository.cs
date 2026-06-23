@@ -6,8 +6,8 @@ namespace api_biblioteca_de_jogos.Repositories;
 
 public interface IJogoRepository
 {
-    public Task CadastrarJogo(Jogo jogo);
-    public Task EditarJogo(int id, EditarJogoDTO jogoEditado);
+    public Task CadastrarJogo(JogoDTO jogoDto);
+    public Task EditarJogo(int id, JogoDTO jogoDto);
     public Task ExcluirJogo(int id);
     public Task BuscarPorId(int id);
     public Task<List<Jogo>> ListarJogos(int pagina, int quantidade);
