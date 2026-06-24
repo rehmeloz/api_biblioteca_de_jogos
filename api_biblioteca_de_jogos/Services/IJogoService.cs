@@ -1,12 +1,11 @@
-﻿using api_biblioteca_de_jogos.DTOs;
-using api_biblioteca_de_jogos.Entities;
+﻿using api_biblioteca_de_jogos.Entities;
 using api_biblioteca_de_jogos.Enums;
 
 namespace api_biblioteca_de_jogos.Services;
 
 public interface IJogoService
 {
-    public Task CadastrarJogo(Jogo jogo);
+    public Task<Jogo> CadastrarJogo(Jogo jogo);
     public Task EditarJogo(int id, Jogo jogo);
     public Task ExcluirJogo(int id);
     public Task BuscarPorId(int id);
