@@ -10,11 +10,11 @@ namespace api_biblioteca_de_jogos.Controllers
     [Route("[controller]")]
     public class JogoController : Controller
     {
-        public readonly IJogoService _service;
+        private readonly IJogoService _service;
 
         public JogoController(IJogoService service)
         {
-            service = _service;
+            _service = service;
         }
 
         [HttpPost("cadastrar")]
@@ -72,11 +72,11 @@ namespace api_biblioteca_de_jogos.Controllers
         }
 
         [HttpGet("listar")]
-        public async Task<IActionResult> ListarJogos(int pagina = 1, int quantidade = 5)
+        public async Task<IActionResult> ListarJogos( int pagina = 1, int quantidade = 5)
         {
-            await _service.ListarJogos(pagina, quantidade);
+            var jogos = await _service.ListarJogos(pagina, quantidade);
 
-            return Ok();
+            return Ok(jogos);
         }
 
         [HttpGet("listar/categoria")]
