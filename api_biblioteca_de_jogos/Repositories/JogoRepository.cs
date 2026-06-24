@@ -1,8 +1,7 @@
 ﻿using api_biblioteca_de_jogos.Data;
-using api_biblioteca_de_jogos.DTOs;
 using api_biblioteca_de_jogos.Entities;
 using api_biblioteca_de_jogos.Enums;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace api_biblioteca_de_jogos.Repositories;
 
@@ -17,7 +16,7 @@ public class JogoRepository : IJogoRepository
 
     public async Task CadastrarJogo(Jogo jogo)
     {
-        _context.AddAsync(jogo);
+        await _context.AddAsync(jogo);
         await _context.SaveChangesAsync();
     }
 
