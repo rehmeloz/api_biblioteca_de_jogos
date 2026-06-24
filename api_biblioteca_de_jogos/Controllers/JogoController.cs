@@ -58,17 +58,23 @@ namespace api_biblioteca_de_jogos.Controllers
         [HttpDelete("excluir")]
         public async Task<IActionResult> ExcluirJogo(int id)
         {
-            await _service.ExcluirJogo(id);
-
-            return Ok();
+            try
+            {
+                await _service.ExcluirJogo(id);
+                return Ok();
+            }
+            catch(Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
 
         [HttpGet("id")]
         public async Task<IActionResult> BuscarPorId(int id)
         {
-            await _service.BuscarPorId(id);
+            var jogo = await _service.BuscarPorId(id);
 
-            return Ok();
+            return Ok(jogo);
         }
 
         [HttpGet("listar")]
