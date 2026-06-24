@@ -1,26 +1,26 @@
-﻿using api_biblioteca_de_jogos.DTOs;
-using api_biblioteca_de_jogos.Entities;
+﻿using api_biblioteca_de_jogos.Entities;
 using api_biblioteca_de_jogos.Enums;
 using api_biblioteca_de_jogos.Repositories;
-using SQLitePCL;
 
 namespace api_biblioteca_de_jogos.Services;
 
 public class JogoService : IJogoService
 {
-    public readonly IJogoRepository _repository;
+    private readonly IJogoRepository _repository;
 
     public JogoService(IJogoRepository repository)
     {
-        repository = _repository;
+        _repository = repository;
     }
 
-    public async Task CadastrarJogo(Jogo jogo)
+    public async Task<Jogo> CadastrarJogo(Jogo jogo)
     {
         if (jogo.Nota > 5)
             throw new Exception("A nota não pode ser maior que 5!");
 
         await _repository.CadastrarJogo(jogo);
+
+        return jogo;
     }
 
     public async Task EditarJogo(int id, Jogo jogoEditado)
@@ -55,7 +55,12 @@ public class JogoService : IJogoService
 
     public async Task<List<Jogo>> ListarJogos(int pagina, int quantidade)
     {
-       return await _repository.ListarJogos(pagina, quantidade);
+       var jogos = await _repository.ListarJogos(pagina, quantidade);
+
+        if (jogos.Count == 0)
+            throw new Exception("A lista de jogos está vazia.");
+
+        return jogos;     
     }
 
     public async Task<List<Jogo>> ListarPorCategoria(ECategoria categoria, int pagina, int quantidade)
