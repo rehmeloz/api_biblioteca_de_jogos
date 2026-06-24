@@ -35,22 +35,22 @@ public class JogoService : IJogoService
 
     public async Task ExcluirJogo(int id)
     {
-        var jogo = _repository.BuscarPorId(id);
-
-        if (jogo == null)
-            throw new Exception("O jogo não foi encontrado!");
-
-        await _repository.ExcluirJogo(id);
-    }
-
-    public async Task BuscarPorId(int id)
-    {
-        var jogo = _repository.BuscarPorId(id);
+        var jogo = await _repository.BuscarPorId(id);
 
         if (jogo == null)
             throw new Exception($"O jogo de id {id} não foi encontrado!");
 
-        await _repository.BuscarPorId(id);
+        await _repository.ExcluirJogo(id);
+    }
+
+    public async Task<Jogo> BuscarPorId(int id)
+    {
+        var jogo = await _repository.BuscarPorId(id);
+
+        if (jogo == null)
+            throw new Exception($"O jogo de id {id} não foi encontrado!");
+
+        return jogo;
     }
 
     public async Task<List<Jogo>> ListarJogos(int pagina, int quantidade)
