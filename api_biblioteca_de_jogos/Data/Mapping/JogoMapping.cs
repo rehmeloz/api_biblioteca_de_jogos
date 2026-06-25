@@ -13,7 +13,7 @@ public class JogoMapping : IEntityTypeConfiguration<Jogo>
         builder.Property(g => g.Genero).HasColumnType("varchar").HasMaxLength(50).IsRequired();
         builder.Property(m => m.Modo).IsRequired();
         builder.Property(c => c.Categoria).IsRequired();
-        builder.Property(n => n.Nome).HasMaxLength(1);
+        builder.Property(n => n.Nota).HasMaxLength(1);
         builder.Property(c => c.Comentario).HasMaxLength(150);
     }
 }
