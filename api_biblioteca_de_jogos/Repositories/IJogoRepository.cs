@@ -1,5 +1,4 @@
-﻿using api_biblioteca_de_jogos.DTOs;
-using api_biblioteca_de_jogos.Entities;
+﻿using api_biblioteca_de_jogos.Entities;
 using api_biblioteca_de_jogos.Enums;
 
 namespace api_biblioteca_de_jogos.Repositories;
