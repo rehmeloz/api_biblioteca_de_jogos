@@ -88,9 +88,9 @@ namespace api_biblioteca_de_jogos.Controllers
         [HttpGet("listar/categoria")]
         public async Task<IActionResult> ListarPorCategoria(ECategoria categoria, int pagina = 1, int quantidade = 5)
         {
-            await _service.ListarPorCategoria(categoria, pagina, quantidade);
+            var jogo = await _service.ListarPorCategoria(categoria, pagina, quantidade);
 
-            return Ok();
+            return Ok(jogo);
         }
 
         [HttpGet("listar/nota")]
