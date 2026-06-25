@@ -68,11 +68,11 @@ public class JogoService : IJogoService
         return await _repository.ListarPorCategoria(categoria, pagina, quantidade);
     }
 
-    public async Task<List<Jogo>> ListaPorNota(int nota, int pagina, int quantidade)
+    public async Task<List<Jogo>> ListarPorNota(int nota, int pagina, int quantidade)
     {
         if (nota > 5)
             throw new Exception("A nota não pode ser maior que 5!");
 
-        return await _repository.ListaPorNota(nota, pagina, quantidade);
+        return await _repository.ListarPorNota(nota, pagina, quantidade);
     }
 }

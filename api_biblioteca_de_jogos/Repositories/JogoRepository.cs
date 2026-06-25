@@ -74,7 +74,7 @@ public class JogoRepository : IJogoRepository
         return jogosPorCategoria;
     }
 
-    public async Task<List<Jogo>> ListaPorNota(int nota, int pagina, int quantidade)
+    public async Task<List<Jogo>> ListarPorNota(int nota, int pagina, int quantidade)
     {
         var jogosPorNota = await _context.Jogos.Where(n => n.Nota == nota)
             .Skip((pagina - 1) * quantidade)

@@ -11,5 +11,5 @@ public interface IJogoService
     public Task<Jogo> BuscarPorId(int id);
     public Task<List<Jogo>> ListarJogos(int pagina, int quantidade);
     public Task<List<Jogo>> ListarPorCategoria(ECategoria categoria, int pagina, int quantidade);
-    public Task<List<Jogo>> ListaPorNota(int nota, int pagina, int quantidade);
+    public Task<List<Jogo>> ListarPorNota(int nota, int pagina, int quantidade);
 }
