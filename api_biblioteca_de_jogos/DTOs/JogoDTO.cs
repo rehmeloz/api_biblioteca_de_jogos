@@ -1,4 +1,6 @@
 ﻿using api_biblioteca_de_jogos.Enums;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace api_biblioteca_de_jogos.DTOs;
 

@@ -33,7 +33,7 @@ namespace api_biblioteca_de_jogos.Controllers
 
             await _service.CadastrarJogo(jogo);
 
-            return Ok();
+            return Ok(jogo);
         }
 
         [HttpPatch("editar")]
@@ -52,7 +52,7 @@ namespace api_biblioteca_de_jogos.Controllers
 
             await _service.EditarJogo(id, jogo);
 
-            return Ok();
+            return Ok(jogo);
         }
 
         [HttpDelete("excluir")]
