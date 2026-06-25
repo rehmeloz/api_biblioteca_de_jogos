@@ -88,17 +88,17 @@ namespace api_biblioteca_de_jogos.Controllers
         [HttpGet("listar/categoria")]
         public async Task<IActionResult> ListarPorCategoria(ECategoria categoria, int pagina = 1, int quantidade = 5)
         {
-            var jogo = await _service.ListarPorCategoria(categoria, pagina, quantidade);
+            var jogos = await _service.ListarPorCategoria(categoria, pagina, quantidade);
 
-            return Ok(jogo);
+            return Ok(jogos);
         }
 
         [HttpGet("listar/nota")]
-        public async Task<IActionResult> ListaPorNota(int nota, int pagina = 1, int quantidade = 5)
+        public async Task<IActionResult> ListarPorNota(int nota, int pagina = 1, int quantidade = 5)
         {
-            await _service.ListaPorNota(nota, pagina, quantidade);
+            var jogos = await _service.ListarPorNota(nota, pagina, quantidade);
 
-            return Ok();
+            return Ok(jogos);
         }
     }
 }
