@@ -17,6 +17,13 @@ namespace api_biblioteca_de_jogos.Controllers
             _service = service;
         }
 
+        //[HttpPost("login")]
+        //public IActionResult Login()
+        //{
+
+        //}
+
+
         [HttpPost("cadastrar")]
         public async Task<IActionResult> CadastrarJogo(JogoDTO jogoDto)
         {
