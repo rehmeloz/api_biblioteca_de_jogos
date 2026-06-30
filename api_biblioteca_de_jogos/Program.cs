@@ -26,6 +26,10 @@ builder.Services.AddScoped<IJogoRepository, JogoRepository>();
 
 builder.Services.AddScoped<IJogoService, JogoService>();
 
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+
 var jwtKey = builder.Configuration["Jwt:Key"];
 var key = Encoding.ASCII.GetBytes(jwtKey);
 
