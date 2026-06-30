@@ -9,11 +9,11 @@ public class AppDbContext : DbContext
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
     public DbSet<Jogo> Jogos { get; set; }
-    public DbSet<Usuarios> Usuarios { get; set; }
+    public DbSet<Usuario> Usuarios { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new JogoMapping());
-        modelBuilder.ApplyConfiguration(new UsuariosMapping());
+        modelBuilder.ApplyConfiguration(new UsuarioMapping());
     }
 }
