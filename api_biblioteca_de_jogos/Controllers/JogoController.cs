@@ -18,7 +18,7 @@ namespace api_biblioteca_de_jogos.Controllers
             _service = service;
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpPost("cadastrar")]
         public async Task<IActionResult> CadastrarJogo(JogoDTO jogoDto)
         {
@@ -38,7 +38,7 @@ namespace api_biblioteca_de_jogos.Controllers
             return Ok(jogo);
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpPatch("editar")]
         public async Task<IActionResult> EditarJogo(int id, JogoDTO jogoDto)
         {
@@ -58,7 +58,7 @@ namespace api_biblioteca_de_jogos.Controllers
             return Ok(jogo);
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpDelete("excluir")]
         public async Task<IActionResult> ExcluirJogo(int id)
         {
