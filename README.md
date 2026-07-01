@@ -14,3 +14,4 @@ API Rest para cadastro e manipulação de uma Biblioteca de Jogos
 
 - **CRUD** funcional (Criar, editar, listar e excluir)
 - **Visualização** dos jogos cadastrados a partir de filtros (Por categoria e nota)
+- **Autenticação com JWT** para proteção de endpoint's da API com Token
