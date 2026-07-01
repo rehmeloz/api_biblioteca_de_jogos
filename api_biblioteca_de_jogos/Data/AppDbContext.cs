@@ -1,6 +1,8 @@
 ﻿using api_biblioteca_de_jogos.Data.Mapping;
 using api_biblioteca_de_jogos.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Net.Sockets;
 
 namespace api_biblioteca_de_jogos.Data;
 
@@ -15,5 +17,13 @@ public class AppDbContext : DbContext
     {
         modelBuilder.ApplyConfiguration(new JogoMapping());
         modelBuilder.ApplyConfiguration(new UsuarioMapping());
+
+        modelBuilder.Entity<Usuario>().HasData(new Usuario
+        {
+            Id = 1,
+            Username = "admin",
+            PasswordHash = "$2a$11$T.M6IT9VsosMoQtDcGrTleUtydl8E5M.Jiyc7ZcAf4K5ahJBLJE3u",
+            Role = "Admin"
+        });
     }
 }
