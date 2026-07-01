@@ -2,6 +2,7 @@
 using api_biblioteca_de_jogos.Entities;
 using api_biblioteca_de_jogos.Enums;
 using api_biblioteca_de_jogos.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api_biblioteca_de_jogos.Controllers
@@ -17,6 +18,7 @@ namespace api_biblioteca_de_jogos.Controllers
             _service = service;
         }
 
+        [Authorize]
         [HttpPost("cadastrar")]
         public async Task<IActionResult> CadastrarJogo(JogoDTO jogoDto)
         {
@@ -36,6 +38,7 @@ namespace api_biblioteca_de_jogos.Controllers
             return Ok(jogo);
         }
 
+        [Authorize]
         [HttpPatch("editar")]
         public async Task<IActionResult> EditarJogo(int id, JogoDTO jogoDto)
         {
@@ -55,6 +58,7 @@ namespace api_biblioteca_de_jogos.Controllers
             return Ok(jogo);
         }
 
+        [Authorize]
         [HttpDelete("excluir")]
         public async Task<IActionResult> ExcluirJogo(int id)
         {
