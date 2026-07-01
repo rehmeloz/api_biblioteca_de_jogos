@@ -23,5 +23,13 @@ public class AppDbContext : DbContext
             PasswordHash = "$2a$11$T.M6IT9VsosMoQtDcGrTleUtydl8E5M.Jiyc7ZcAf4K5ahJBLJE3u",
             Role = "Admin"
         });
+
+        modelBuilder.Entity<Usuario>().HasData(new Usuario
+        {
+            Id = 2,
+            Username = "Renata",
+            PasswordHash = "$2a$11$7SCjPf6mrUIIBLvepgBVhulhAcbZRhCDD9B21EXAvukR06EXHpL6S", // renata123
+            Role = "Dev"
+        }); 
     }
 }
