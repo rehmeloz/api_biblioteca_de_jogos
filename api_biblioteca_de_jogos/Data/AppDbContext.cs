@@ -1,8 +1,6 @@
 ﻿using api_biblioteca_de_jogos.Data.Mapping;
 using api_biblioteca_de_jogos.Entities;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System.Net.Sockets;
 
 namespace api_biblioteca_de_jogos.Data;
 
