@@ -25,7 +25,7 @@ public class JogoService : IJogoService
 
     public async Task EditarJogo(int id, Jogo jogoEditado)
     {
-        var jogo = _repository.BuscarPorId(id);
+        var jogo = await _repository.BuscarPorId(id);
 
         if (jogo == null)
             throw new Exception("O jogo não foi encontrado!");
