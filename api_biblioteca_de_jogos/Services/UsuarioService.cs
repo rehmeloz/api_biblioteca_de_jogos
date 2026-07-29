@@ -1,5 +1,6 @@
 ﻿using api_biblioteca_de_jogos.Entities;
 using api_biblioteca_de_jogos.Repositories;
+using BCrypt.Net;
 
 namespace api_biblioteca_de_jogos.Services;
 
