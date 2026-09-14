@@ -1,8 +1,8 @@
-# 📋 API de Biblioteca de Jogos
+# API de Biblioteca de Jogos
 
 API Rest para cadastro e manipulação de uma Biblioteca de Jogos
 
-## 🚀 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 ### Backend
 - **C#** — Linguagem principal da API
@@ -10,7 +10,7 @@ API Rest para cadastro e manipulação de uma Biblioteca de Jogos
 - **ASP.NET Core** — Framework utilizado na API
 - **EF Core** — ORM utilizado na API
 
-## ✨ Funcionalidades
+## Funcionalidades
 
 - **CRUD** funcional (Criar, editar, listar e excluir)
 - **Visualização** dos jogos cadastrados a partir de filtros (Por categoria e nota)
