@@ -4,7 +4,6 @@ API Rest para cadastro e manipulação de uma Biblioteca de Jogos
 
 ## Tecnologias Utilizadas
 
-### Backend
 - **C#** — Linguagem principal da API
 - **.NET** — Ecossistema utilizado na API
 - **ASP.NET Core** — Framework utilizado na API
