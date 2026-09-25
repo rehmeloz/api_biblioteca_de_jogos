@@ -9,7 +9,8 @@ API Rest para cadastro e manipulação de uma Biblioteca de Jogos
 - **.NET** — Ecossistema utilizado na API
 - **ASP.NET Core** — Framework utilizado na API
 - **EF Core** — ORM utilizado na API
-
+- **Autenticação com JWT** — Transmite informações de forma segura
+- 
 ## Funcionalidades
 
 - **CRUD** funcional (Criar, editar, listar e excluir)
